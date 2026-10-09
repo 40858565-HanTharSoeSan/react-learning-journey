@@ -1,0 +1,7 @@
+.topbar {
+  background-color: #e63946;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  color:#F1FAEE;
+}
