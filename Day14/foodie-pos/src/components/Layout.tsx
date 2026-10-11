@@ -7,11 +7,12 @@ interface Props {
 }
 
 export function Layout({ children }: Props) {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
   return (
     <div>
       <Topbar />
       <div style={{ display: "flex" }}>
-        <Sidebar />
+        {isLoggedIn ? <Sidebar /> : null}
         {children}
       </div>
     </div>
