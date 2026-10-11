@@ -15,6 +15,7 @@ export function Topbar() {
         display: "flex",
         color: "#F1FAEE",
         padding: "0 10px",
+        height: "10%",
       }}
     >
       {isLoggedIn ? <><h4>Foodie POS</h4>

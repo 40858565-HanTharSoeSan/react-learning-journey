@@ -15,8 +15,23 @@ export default function Login() {
   };
   return (
     <Layout>
-      <div style={{ display: "flex", width: "100%", justifyContent: "center" }}>
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          height: "100%",
+          justifyContent: "center",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 8,
+            justifyContent: "center",
+          }}
+        >
           <input
             type="text"
             placeholder="Email"

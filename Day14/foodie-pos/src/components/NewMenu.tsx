@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Menu } from "./Content";
+import { Menu } from "./Menus";
 
 interface Props {
-  menus:Menu[];
+  menus: Menu[];
   setMenus: React.Dispatch<React.SetStateAction<Menu[]>>;
 }
 
-export function NewMenu({ menus,setMenus }: Props) {
+export function NewMenu({ menus, setMenus }: Props) {
   const defaultMenu: Menu = {
     id: 0,
     name: "",
@@ -17,7 +17,7 @@ export function NewMenu({ menus,setMenus }: Props) {
   const [newMenu, setNewMenu] = useState<Menu>(defaultMenu);
 
   const handleCreateMenu = () => {
-    const updatedMenus:Menu[] = [...menus, newMenu];;
+    const updatedMenus: Menu[] = [...menus, newMenu];
     setMenus(updatedMenus);
     localStorage.setItem("menus", JSON.stringify(updatedMenus));
     setNewMenu(defaultMenu);
@@ -53,7 +53,7 @@ export function NewMenu({ menus,setMenus }: Props) {
       <div>
         <input
           type="checkbox"
-          checked = {newMenu.isAvailable}
+          checked={newMenu.isAvailable}
           onChange={(evt) => {
             setNewMenu({ ...newMenu, isAvailable: evt.target.checked });
           }}

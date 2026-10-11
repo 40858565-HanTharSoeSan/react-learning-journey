@@ -1,7 +1,10 @@
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import Login from "./Login";
 
 export default function PrivateRoutes() {
-  const isLoggedIn = localStorage.getItem("isLoggedIn");
-  return <div>{isLoggedIn ? <Outlet /> : <Login />}</div>;
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (!isLoggedIn) {
+        return <Navigate to="/login"/>
+    }
+  return <Outlet /> ;
 }
